@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Todo — Vanilla JS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 🌟 Navbar -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="#" class="navbar__brand">MyTodo</a>
+      <ul class="navbar__menu">
+        <li><a href="#" class="navbar__link">Home</a></li>
+        <li><a href="#" class="navbar__link">About</a></li>
+        <li><a href="#" class="navbar__link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Todo App -->
+  <main class="todo">
+    <header class="todo__header">
+      <h1 class="todo__title">Todo</h1>
+      <p class="todo__subtitle">Small, fast & accessible</p>
+    </header>
+
+    <section class="todo__card" aria-labelledby="new-task-label">
+      <form id="todo-form" class="todo__form" autocomplete="off">
+        <label id="new-task-label" for="todo-input" class="visually-hidden">Add task</label>
+        <input id="todo-input" class="todo__input" type="text" placeholder="What needs to be done?" aria-describedby="todo-help">
+        <button type="submit" class="todo__add" aria-label="Add task">Add</button>
+      </form>
+
+      <div id="todo-help" class="todo__help">Press Enter or click Add — double-click a task to edit.</div>
+
+      <ul id="todo-list" class="todo__list" role="list" aria-live="polite"></ul>
+
+      <footer class="todo__footer">
+        <div class="todo__meta">
+          <span id="todo-count" class="todo__count">0 tasks</span>
+        </div>
+
+        <div class="todo__controls" role="tablist" aria-label="Filter tasks">
+          <button class="todo__filter todo__filter--active" data-filter="all" role="tab">All</button>
+          <button class="todo__filter" data-filter="active" role="tab">Active</button>
+          <button class="todo__filter" data-filter="completed" role="tab">Completed</button>
+        </div>
+
+        <div class="todo__actions">
+          <button id="clear-completed" class="todo__action">Clear completed</button>
+        </div>
+      </footer>
+    </section>
+
+    <div id="announcer" class="visually-hidden" role="status" aria-live="polite"></div>
+  </main>
+
+  <!-- 🌟 Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 MyTodo App..</p>
+    <p>Made with ❤️ by piyush </p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
